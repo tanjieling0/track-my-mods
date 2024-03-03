@@ -1,5 +1,6 @@
 import React from "react";
-import Divider from "@/styles/divider";
+import Divider from "@/components/divider";
+import ProgressBar from "@/components/progress-bar";
 import { Overpass, Radio_Canada } from '@next/font/google';
 
 /* Fonts */
@@ -13,10 +14,12 @@ const radioCanada = Radio_Canada({
   weight: ['400', '700'],
 })
 
+/* Colors for texts */
 const grayText: string = '#6A6A6A';
 const orangeText: string = '#FF9100';
 const redText: string = '#FE7752';
 const grayBackground: string = '#ECECEC';
+
 
 export default function Homepage() {
   return (
@@ -33,12 +36,53 @@ export default function Homepage() {
         </header>
       </section>
 
-      <div className="py-36">
+      <div className="py-32">
         <Divider />
       </div>
 
-      <section className="absolute right-10 rounded-3xl h-[100rem] w-[50rem] -translate-y-24" style={{ background: `${grayBackground}`}}>
-        <div className={radioCanada.className}></div>
+      {/* Requirements */}
+      <section className="flex flex-col absolute justify-start right-10 rounded-3xl h-[100rem] w-[50rem] -translate-y-24" style={{ background: `${grayBackground}`}}>
+        <div className={radioCanada.className}>
+          <h2 className="text-5xl py-8 px-10">Requirements</h2>
+
+          <ul>
+            <li className="text-light font-light px-10 text-2xl">
+              <p>Progress</p>
+
+              <div className="py-4 -translate-x-0">
+                <ProgressBar widthDarkGreen={55} widthLightGreen={75} />
+                <p className="text-right py-16 text-xl">88 / 160 MCs Completed</p>
+              </div>
+
+            </li>
+
+            {/* Breakdown of the entire progress */}
+            <li className="text-light font-light px-10 text-2xl">
+              <p className="underline">Breakdown</p>
+
+              <ul className="flex flex-col space-y-20">
+
+                <li className="-translate-x-0 py-6">
+                  Common Curriculum (GE)
+                  <ProgressBar widthDarkGreen={80} widthLightGreen={90} />
+                  <p className="relative translate-y-16 text-right text-xl">32 / 40 MCs Completed</p>
+                </li>
+                <li className="-translate-x-0 py-6">
+                  Programme Requirements
+                  <ProgressBar widthDarkGreen={55} widthLightGreen={60} />
+                  <p className="relative translate-y-16 text-right text-xl">44 / 80 MCs Completed</p>
+                </li>
+                <li className="-translate-x-0 py-6">
+                  Unrestricted Electives
+                  <ProgressBar widthDarkGreen={10} widthLightGreen={30} />
+                  <p className="relative translate-y-16 text-right text-xl">4 / 40 MCs Completed</p>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        
+        </div>
       </section>
 
 
