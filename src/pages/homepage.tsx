@@ -17,6 +17,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+import { Button } from "@/components/ui/button"
 
 /* Fonts */
 const overpass = Overpass({
@@ -40,6 +51,7 @@ const orangeText: string = '#FF9100';
 const redText: string = '#FE7752';
 const grayBackground: string = '#ECECEC';
 const darkGrayText: string = '#9F9F9F';
+const blueButtonBackground: string = '#6DA1D8';
 
 
 export default function Homepage() {
@@ -65,11 +77,11 @@ export default function Homepage() {
       <section className={`flex flex-col absolute px-10 ${radioCanada.className}`}>
 
         {/* This Semester */}
-        <div className="flex flex-row justify-self-auto">
+        <div className="flex flex-row">
           <p className="relative -top-24 text-5xl font-extrabold">
             This Semester
           </p>
-          <div>
+          
           <DropdownMenu>
             <DropdownMenuTrigger className={`flex px-28 text-2xl -translate-y-[6rem] translate-x-12 rounded-3xl h-12 ${yaldevi.className}`} style={{ background: `${grayBackground}`, color: darkGrayText}}>
                 <div className="flex self-center -translate-x-20 ">
@@ -90,7 +102,32 @@ export default function Homepage() {
               <DropdownMenuItem className="text-xl">Year 4 Sem 2</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          </div>
+
+          <Drawer>
+            <DrawerTrigger className={`text-2xl -translate-y-[6rem] px-28 mx-10 translate-x-12 rounded-3xl h-12 font-thin ${yaldevi.className}`} style= {{ background: `${blueButtonBackground}`, color: "#FFFFFF"}}>
+              + Insert New Mod
+            </DrawerTrigger>
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>
+                  <p className="underline">Add New Module</p>
+                  <p>Year</p>
+                  <p>Semester</p>
+                  <p>Module Code</p>
+                  <p>MCs</p>
+                  <p>Type</p>
+                </DrawerTitle>
+                <DrawerDescription>This action cannot be undone.</DrawerDescription>
+              </DrawerHeader>
+              <DrawerFooter>
+                <Button>Submit</Button>
+                <DrawerClose>
+                  <Button variant="outline">Cancel</Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+
         </div>
         
         <section className="py-80">
