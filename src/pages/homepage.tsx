@@ -60,16 +60,16 @@ export default function Homepage() {
 
        {/* Header */}
       <section className={overpass.className}>
-        <header className="flex absolute justify-evenly items-center py-16 w-full"> 
-            <h1 className="flex absolute bottom-0 left-0 px-12 text-8xl overpass-text font-bold">
+        <header className="flex absolute justify-evenly items-center py-10 w-full"> 
+            <h1 className="flex absolute bottom-0 left-0 px-12 text-5xl overpass-text font-bold">
               <p style={{ color: orangeText }}>Jie Ling's</p>
               <p style={{ color: redText }} className="px-4">Mods</p>
             </h1>
-          <p className="absolute bottom-0 right-0 px-12 text-4xl" style={{color: grayText}}>Matriculation Year AY22/23</p>
+          <p className="absolute bottom-0 right-0 px-12 text-2xl" style={{color: grayText}}>Matriculation Year AY22/23</p>
         </header>
       </section>
 
-      <div className="py-32">
+      <div className="py-20">
         <Divider />
       </div>
 
